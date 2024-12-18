@@ -13,6 +13,7 @@ from apps import secondPage
 # from apps import (page names)
 # Landing Page
 app.layout = html.Div([
+
     # dash component to read url using pathname
     dcc.Location(id='url', refresh=False, pathname=''),
     html.Div([
@@ -30,7 +31,7 @@ def display_page(pathname):
     if pathname == '/apps/secondPage':
         return secondPage.layout
     else:
-        return app.layout
+        return
 
 if __name__ == '__main__':
     app.run_server(debug=False)
