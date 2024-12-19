@@ -7,17 +7,18 @@ from dash.dependencies import Input, Output, State
 # Connecting to the app.py file
 from app import app
 from app import server
-from apps import secondPage
+from pages import choropleth1
 
-# Connecting to app pages from apps folder
-# from apps import (page names)
+# Connecting to app pages from pages folder
+from pages import choropleth1, scatterplot1
 # Landing Page
 app.layout = html.Div([
 
     # dash component to read url using pathname
     dcc.Location(id='url', refresh=False, pathname=''),
     html.Div([
-        dcc.Link('Link', href='/apps/secondPage'),
+        dcc.Link('Link to map', href='/pages/choropleth1'),
+        dcc.Link('Link to scatterplot', href='/pages/scatterplot1'),
     ], className='row'),
 
     #All app pages will go inside this div
@@ -28,8 +29,10 @@ app.layout = html.Div([
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
 def display_page(pathname):
-    if pathname == '/apps/secondPage':
-        return secondPage.layout
+    if pathname == '/pages/choropleth1':
+        return choropleth1.layout
+    elif pathname == '/pages/scatterplot1':
+        return scatterplot1.layout
     else:
         return
 

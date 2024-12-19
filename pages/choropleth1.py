@@ -27,8 +27,11 @@ mapFig.update_layout(legend=dict(
     yanchor="top",
     y=0.99,
     xanchor="left",
-    x=0.1
+    x=0.1,
 ))
+
+mapFig.update_layout(margin=dict(l=150, r=150))
+
 # page layout
 layout = html.Div([
     html.H1('Global Stats', style={'textAlign': 'center'}),
