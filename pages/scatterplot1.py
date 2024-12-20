@@ -4,10 +4,12 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 import pandas as pd
 import pathlib
+import dash_bootstrap_components as dbc
 from pathlib import Path
 from app import app
 import numpy as np
 import country_converter as coco
+import time
 
 # scripts will run regardless of OS
 # returns absolute path to datasets
@@ -49,4 +51,6 @@ fig.update_traces(marker=dict(symbol="circle", size=7, line=dict(width=0.5, colo
 layout = html.Div([
     html.H1('Correlation', style={'textAlign': 'center'}),
     dcc.Graph(id='scatterplot1', figure=fig),
+
 ])
+

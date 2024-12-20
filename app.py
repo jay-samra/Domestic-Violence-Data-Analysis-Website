@@ -3,7 +3,8 @@ import dash_bootstrap_components as dbc
 
 
 # meta tags for mobile use
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUMEN],suppress_callback_exceptions=True,
+# MORPH, MINTY,
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.MORPH],suppress_callback_exceptions=True,
                 meta_tags=[{'name': 'viewport',
                             'content': 'width=device-width, initial-scale=1.0'}]
                 )

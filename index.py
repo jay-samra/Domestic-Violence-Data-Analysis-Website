@@ -3,6 +3,8 @@ from dash import html
 import pandas as pd
 import numpy as np
 from dash.dependencies import Input, Output, State
+import dash_bootstrap_components as dbc
+import time
 
 # Connecting to the app.py file
 from app import app
@@ -11,13 +13,18 @@ from pages import choropleth1
 
 # Connecting to app pages from pages folder
 from pages import choropleth1, scatterplot1
+
+
+cardMap = dbc.Card([])
+
 # Landing Page
 app.layout = html.Div([
 
     # dash component to read url using pathname
     dcc.Location(id='url', refresh=False, pathname=''),
     html.Div([
-        dcc.Link('Link to map', href='/pages/choropleth1'),
+        dbc.Button("Next Page", href="/pages/choropleth1"),
+        dcc.Link("Link to Map", href="/pages/choropleth1"),
         dcc.Link('Link to scatterplot', href='/pages/scatterplot1'),
     ], className='row'),
 
@@ -25,7 +32,7 @@ app.layout = html.Div([
     html.Div(id='page-content', children=[]),
 ])
 # input: link
-# output: switch to page with map
+# output: switch to pages
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
 def display_page(pathname):

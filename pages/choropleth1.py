@@ -4,6 +4,7 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 import pandas as pd
 import pathlib
+import dash_bootstrap_components as dbc
 from pathlib import Path
 from app import app
 
@@ -36,4 +37,5 @@ mapFig.update_layout(margin=dict(l=150, r=150))
 layout = html.Div([
     html.H1('Global Stats', style={'textAlign': 'center'}),
     dcc.Graph(id='globalMap', figure=mapFig),
+    dbc.Button('Link to scatterplot', href='/pages/scatterplot1'),
 ])
