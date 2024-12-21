@@ -12,7 +12,7 @@ from app import server
 from pages import choropleth1
 
 # Connecting to app pages from pages folder
-from pages import choropleth1, scatterplot1
+from pages import choropleth1, scatterplot1, scatterplot2
 
 
 cardMap = dbc.Card([])
@@ -40,6 +40,8 @@ def display_page(pathname):
         return choropleth1.layout
     elif pathname == '/pages/scatterplot1':
         return scatterplot1.layout
+    elif pathname == '/pages/scatterplot2':
+        return scatterplot2.layout
     else:
         return
 

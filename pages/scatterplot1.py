@@ -11,6 +11,8 @@ import numpy as np
 import country_converter as coco
 import time
 
+from pages import scatterplot2
+
 # scripts will run regardless of OS
 # returns absolute path to datasets
 PATH = pathlib.Path(__file__).parent
@@ -51,6 +53,6 @@ fig.update_traces(marker=dict(symbol="circle", size=7, line=dict(width=0.5, colo
 layout = html.Div([
     html.H1('Correlation', style={'textAlign': 'center'}),
     dcc.Graph(id='scatterplot1', figure=fig),
-
+    dbc.Button("Next Page", href="/pages/scatterplot2"),
 ])
 
