@@ -32,6 +32,7 @@ mapFig.update_layout(legend=dict(
 ))
 
 mapFig.update_layout(margin=dict(l=150, r=150))
+mapFig.update_layout(paper_bgcolor="#e0e0e0")
 
 # page layout
 layout = html.Div([

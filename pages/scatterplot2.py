@@ -44,7 +44,7 @@ ndf1['violenceNumCopy'] = ndf1['violenceNum']
 ndf1['violenceNumCopy'].fillna(value=0, inplace=True)
 ndf1['violenceNumCopy'] = ndf1['violenceNumCopy'].astype(int)
 
-fig = px.scatter_3d(ndf1, x='Ratio', y='incomeSpent', z='violenceNum', color='Country', size='violenceNumCopy', size_max=18, opacity=0.7)
+fig = px.scatter_3d(ndf1, x='Ratio', y='incomeSpent', z='violenceNum', color='Country', size='violenceNumCopy', size_max=18, opacity=0.7, log_y=True,log_x=True, log_z=True)
 
 layout = html.Div([
     html.H1('Displaying the Correlation Between Healthcare Costs, # of Women in Workforce, and % of Women Who Have Experience Violence', style={'textAlign': 'center'}),

@@ -17,9 +17,17 @@ from pages import choropleth1, scatterplot1, scatterplot2
 
 cardMap = dbc.Card([])
 
+navBar = dbc.NavbarSimple(
+    dbc.NavItem(dbc.NavLink("Table of Contents", href="/pages/scatterplot1")),
+    brand = 'Page 2',
+    color='green',
+    dark = True,
+)
+
+
 # Landing Page
 app.layout = html.Div([
-
+    navBar,
     # dash component to read url using pathname
     dcc.Location(id='url', refresh=False, pathname=''),
     html.Div([
