@@ -5,6 +5,7 @@ import numpy as np
 from dash.dependencies import Input, Output, State
 import dash_bootstrap_components as dbc
 import time
+import statsmodels.api as sm
 
 # Connecting to the app.py file
 from app import app
@@ -12,14 +13,14 @@ from app import server
 from pages import choropleth1
 
 # Connecting to app pages from pages folder
-from pages import choropleth1, scatterplot1, scatterplot2
+from pages import choropleth1, scatterplot1, scatterplot2, choropleth2
 
 
 cardMap = dbc.Card([])
 
 navBar = dbc.NavbarSimple(
     dbc.NavItem(dbc.NavLink("Table of Contents", href="/pages/scatterplot1")),
-    brand = 'Page 2',
+    brand = 'Measuring the Socioeconomic Factors on Domestic Violence: A Global & National Case Study',
     color='green',
     dark = True,
 )
@@ -34,6 +35,7 @@ app.layout = html.Div([
         dbc.Button("Next Page", href="/pages/choropleth1"),
         dcc.Link("Link to Map", href="/pages/choropleth1"),
         dcc.Link('Link to scatterplot', href='/pages/scatterplot1'),
+        dcc.Link('Link to ameircan', href='/pages/choropleth2'),
     ], className='row'),
 
     #All app pages will go inside this div
@@ -50,6 +52,8 @@ def display_page(pathname):
         return scatterplot1.layout
     elif pathname == '/pages/scatterplot2':
         return scatterplot2.layout
+    elif pathname == '/pages/choropleth2':
+        return choropleth2.layout
     else:
         return
 
