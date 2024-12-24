@@ -10,7 +10,6 @@ import statsmodels.api as sm
 # Connecting to the app.py file
 from app import app
 from app import server
-from pages import choropleth1
 
 # Connecting to app pages from pages folder
 from pages import choropleth1, scatterplot1, scatterplot2, choropleth2, scatterplot3
