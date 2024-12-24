@@ -1,0 +1,7 @@
+country_converter
+dash==2.18.2
+dash_bootstrap_components
+numpy
+pandas
+statsmodels
+gunicorn
