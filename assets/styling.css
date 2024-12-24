@@ -1,0 +1,41 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8rem;
+}
+
+.navbar-brand{
+    font-size: 24px;
+    padding-right: 30px;
+    margin-left: -100px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 22rem;
+    padding: 2rem 1rem;
+    background-color: #f8f9fa;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.content-wrapper {
+    margin-left: 250px;
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.page-content {
+    display: flex;
+    #flex-wrap: wrap;
+    gap: 20px;
+}
