@@ -5,3 +5,5 @@ numpy
 pandas
 statsmodels
 gunicorn
+sklearn
+matplotlib
