@@ -17,7 +17,7 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.MINTY], suppress_call
 server = app.server
 
 # Layout definition (should work)
-from pages import choropleth1, scatterplot1, scatterplot2, choropleth2, scatterplot3, kmeans1
+from pages import choropleth1, scatterplot1, scatterplot2, choropleth2, scatterplot3, kmeansNational
 
 
 cardMap = dbc.Card([])
@@ -53,7 +53,7 @@ sidebar =  html.Div(
                     dbc.NavLink("American Analysis", href="/pages/choropleth2", active="exact"),
                     dbc.NavLink("Trends in American Data", href="/pages/scatterplot3", active="exact"),
                     dbc.NavLink("Global Data Clustering & Segmentation", href="/", active="exact"),
-                    dbc.NavLink("American Data Clustering & Segmentation", href="/pages/kmeans1", active="exact"),
+                    dbc.NavLink("American Data Clustering & Segmentation", href="/pages/kmeansNational", active="exact"),
                     dbc.NavLink("Predictive Modeling", href="/", active="exact"),
                     dbc.NavLink("Conclusion", href="/", active="exact"),
                 ], gap = 3),
@@ -76,14 +76,9 @@ app.layout = html.Div([
     # dash component to read url using pathname
     dcc.Location(id='url', refresh=False, pathname=''),
     html.Div([
-        html.Div([
-            # dcc.Link("Link to Map", href="/pages/choropleth1"),
-            # dcc.Link('Link to Scatterplot', href='/pages/scatterplot1'),
-            # dcc.Link('Link to American', href='/pages/choropleth2'),
-        ], className='row'),
 
     #All app pages will go inside this div
-        html.Div(id='page-content', children=[], className="page-content")
+        html.Div(id='page-content', children=[]),
     ], className="content-wrapper")
 ], className="app-container")
 
@@ -103,8 +98,8 @@ def display_page(pathname):
         return choropleth2.layout
     elif pathname == '/pages/scatterplot3':
         return scatterplot3.layout
-    elif pathname == '/pages/kmeans1':
-        return kmeans1.layout
+    elif pathname == '/pages/kmeansNational':
+        return kmeansNational.layout
     else:
         return
 if __name__ == '__main__':

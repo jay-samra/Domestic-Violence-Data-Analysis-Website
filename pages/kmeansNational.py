@@ -51,16 +51,12 @@ plot_data['Cluster'] = labels
 
 # creating scatter plot
 fig = px.scatter(plot_data, x='Violence', y='Education', color='Cluster',
-                 title='KMeans Clustering',
-                 labels={'Violence': '% of Women Who Have Experienced Violence',
-                         'Education': '% of Population With No College Education'},
+                 title='KMeans Clustering', labels={'Violence': '% of Women Who Have Experienced Violence', 'Education': '% of Population With No College Education'},
                  color_continuous_scale='viridis')
 
 # Add centroids to the Plotly plot
 for i, centroid in enumerate(kmeans.cluster_centers_):
-    fig.add_trace(go.Scatter(x=[centroid[0]], y=[centroid[1]],
-                             mode='markers',
-                             marker=dict(color='red', size=12, symbol='x'),
+    fig.add_trace(go.Scatter(x=[centroid[0]], y=[centroid[1]], mode='markers', marker=dict(color='red', size=12, symbol='x'),
                              name=f'Centroid {i}'))
 
 # page layout

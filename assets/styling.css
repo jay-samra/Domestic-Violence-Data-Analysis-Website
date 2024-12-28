@@ -4,6 +4,7 @@
     left: 0;
     right: 0;
     height: 8rem;
+    z-index: 9999;
 }
 
 .navbar-brand{
@@ -20,6 +21,7 @@
     width: 22rem;
     padding: 2rem 1rem;
     background-color: #f8f9fa;
+        z-index: 99999;
 }
 
 .app-container {
