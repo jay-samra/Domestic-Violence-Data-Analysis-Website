@@ -17,13 +17,13 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.MINTY], suppress_call
 server = app.server
 
 # Layout definition (should work)
-from pages import choropleth1, scatterplot1, scatterplot2, choropleth2, scatterplot3, kmeansNational
+from pages import choropleth1, scatterplot1, scatterplot2, choropleth2, scatterplot3, kmeansNational, linearRegressionAK
 
 
 cardMap = dbc.Card([])
 
 navBar = dbc.NavbarSimple(
-    dbc.NavItem(dbc.DropdownMenu(label="Important Links", children=[
+    dbc.NavItem(dbc.DropdownMenu(className="dropdown", label="Important Links", children=[
         dbc.DropdownMenuItem("Donate Today!", href='https://ncadv.org/donate'),
         dbc.DropdownMenuItem("LinkedIn", href='https://www.linkedin.com/in/jagroop-s-sam18731/', external_link=True),
     ],)),
@@ -54,7 +54,7 @@ sidebar =  html.Div(
                     dbc.NavLink("Trends in American Data", href="/pages/scatterplot3", active="exact"),
                     dbc.NavLink("Global Data Clustering & Segmentation", href="/", active="exact"),
                     dbc.NavLink("American Data Clustering & Segmentation", href="/pages/kmeansNational", active="exact"),
-                    dbc.NavLink("Predictive Modeling", href="/", active="exact"),
+                    dbc.NavLink("Predictive Modeling", href="/pages/linearRegressionAK", active="exact"),
                     dbc.NavLink("Conclusion", href="/", active="exact"),
                 ], gap = 3),
 
@@ -100,6 +100,8 @@ def display_page(pathname):
         return scatterplot3.layout
     elif pathname == '/pages/kmeansNational':
         return kmeansNational.layout
+    elif pathname == '/pages/linearRegressionAK':
+        return linearRegressionAK.layout
     else:
         return
 if __name__ == '__main__':

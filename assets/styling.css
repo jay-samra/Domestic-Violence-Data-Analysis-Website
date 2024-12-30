@@ -41,3 +41,9 @@
     #flex-wrap: wrap;
     gap: 20px;
 }
+
+.dropdown {
+    margin-left: 25px;
+    flex-grow: 1;
+    #padding: 20px;
+}
