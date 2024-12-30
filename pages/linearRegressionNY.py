@@ -18,16 +18,23 @@ import dash_bootstrap_components as dbc
 PATH = pathlib.Path(__file__).parent
 DATA_PATH = PATH.joinpath("../datasets").resolve()
 
-df4 = pd.read_csv(DATA_PATH.joinpath('ArkansasDataNEW.csv'), encoding='utf-8-sig')
+df4 = pd.read_csv(DATA_PATH.joinpath('NewYorkData.csv'), encoding='latin1')
 
 # For limited data set
 df4['Violent'] = df4['Violent'].str.replace(',', '').astype(float)
 df4['Violent'] = df4['Violent'].replace({',': ''}, regex=True).astype(float)
-# df4.rename(columns={"ï»¿Year" : "Year"}, inplace = True)
+
 df4.columns = df4.columns.str.strip()
 
 y = df4['Violent']
 X = df4['Year']
+
+# print(type(X))
+# print(type(y))
+# print(X.isnull().sum())
+# print(y.isnull().sum())
+# print(X.dtype)
+# print(y.dtype)
 
 X = X.str.replace(',', '').str.strip()
 X = pd.to_numeric(X, errors='coerce')
@@ -35,33 +42,29 @@ X = X.astype(float)
 
 plt.scatter(X, y)
 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=17)
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.4, random_state = 17)
-
-X_train = np.array(X_train).reshape(-1,1)
-X_test = np.array(X_test).reshape(-1,1)
+X_train = np.array(X_train).reshape(-1, 1)
+X_test = np.array(X_test).reshape(-1, 1)
 
 lr = LinearRegression()
-print(X.isnull().sum())  # Check how many NaN values exist in X
-print(X[X.isnull()])
+
 lr.fit(X_train, y_train)
 # Y = mX + c
 c = lr.intercept_
 m = lr.coef_
-#m = m[0]
+# m = m[0]
 
 X_train = np.array(X_train, dtype=float)
 
-Y_pred_train = m*X_train + c
+Y_pred_train = m * X_train + c
 Y_pred_train.flatten()
 
 # predict calculates the same
 y_pred_train1 = lr.predict(X_train)
 
-
 plt.scatter(X_train, y_train)
 plt.plot(X_train, y_pred_train1, color="red")
-
 
 fig = go.Figure()
 fig2 = go.Figure()
@@ -94,7 +97,6 @@ fig.update_layout(
     yaxis_title="Violent Crime Rate",
     template="plotly_white"
 )
-
 
 # page layout
 layout = html.Div([

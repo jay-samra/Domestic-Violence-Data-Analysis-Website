@@ -17,7 +17,7 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.MINTY], suppress_call
 server = app.server
 
 # Layout definition (should work)
-from pages import choropleth1, scatterplot1, scatterplot2, choropleth2, scatterplot3, kmeansNational, linearRegressionAK
+from pages import choropleth1, scatterplot1, scatterplot2, choropleth2, scatterplot3, kmeansNational, linearRegressionAK, linearRegressionNY
 
 
 cardMap = dbc.Card([])
@@ -52,9 +52,9 @@ sidebar =  html.Div(
                     dbc.NavLink("3D-Analysis", href="/pages/scatterplot2", active="exact"),
                     dbc.NavLink("American Analysis", href="/pages/choropleth2", active="exact"),
                     dbc.NavLink("Trends in American Data", href="/pages/scatterplot3", active="exact"),
-                    dbc.NavLink("Global Data Clustering & Segmentation", href="/", active="exact"),
                     dbc.NavLink("American Data Clustering & Segmentation", href="/pages/kmeansNational", active="exact"),
-                    dbc.NavLink("Predictive Modeling", href="/pages/linearRegressionAK", active="exact"),
+                    dbc.NavLink("Predictive Modeling (Arkansas)", href="/pages/linearRegressionAK", active="exact"),
+                    dbc.NavLink("Predictive Modeling (New York)", href="/pages/linearRegressionNY", active="exact"),
                     dbc.NavLink("Conclusion", href="/", active="exact"),
                 ], gap = 3),
 
@@ -102,6 +102,8 @@ def display_page(pathname):
         return kmeansNational.layout
     elif pathname == '/pages/linearRegressionAK':
         return linearRegressionAK.layout
+    elif pathname == '/pages/linearRegressionNY':
+        return linearRegressionNY.layout
     else:
         return
 if __name__ == '__main__':
