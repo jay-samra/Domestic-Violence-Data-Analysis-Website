@@ -101,7 +101,9 @@ layout = html.Div([
     html.H1('Looking For Trends', style={'textAlign': 'center'}),
     dbc.Stack([
         dcc.Graph(id='regression1', figure=fig2),
+        html.P('this is the first graph', style={'textAlign': 'center'}),
         dcc.Graph(id='regression', figure=fig),
 
-    ], gap=3)
+    ], gap=3),
+    html.P('text', style={'textAlign': 'center'})
 ])

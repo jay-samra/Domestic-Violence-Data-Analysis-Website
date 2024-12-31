@@ -36,7 +36,14 @@ mapFig.update_layout(paper_bgcolor="#e0e0e0")
 
 # page layout
 layout = html.Div([
-    html.H1('Global Stats', style={'textAlign': 'center'}),
+    html.H1('A Look Across the Globe', style={'textAlign': 'center', 'font-family':'Trebuchet MS, Arial, sans-serif', 'font-size': '8px'}),
     dcc.Graph(id='globalMap', figure=mapFig),
-    dbc.Button('Link to scatterplot', href='/pages/scatterplot1'),
+    html.P('This interactive map displays the existence of laws protecting against domestic violence in every country across the world.', style={'textAlign': 'center', 'font-family':'Trebuchet MS, Arial, sans-serif', 'font-size': '16px'}),
+    html.P("This interactive choropleth map highlights the current status of countries worldwide in providing legal protections against domestic violence, "
+           "distinguishing between those that have implemented safeguards for their citizens and those that have yet to enact such measures. "
+           "According to Our World In Data, twenty years ago, 80% of the world population lived in a country that had no penalties for domestic violence."
+           " Today, 90% of the world population live in countries with legal policies to penalize domestic violence. "
+           "This trend reflects significant progress in the global effort to combat violence, "
+           "underscoring society's commitment to addressing this issue and we will continue to learn more about the factors that cause domestic violence.",
+           style={'textAlign': 'center', 'font-family':'Trebuchet MS, Arial, sans-serif', 'font-size': '18px', 'max-width': '900px', 'margin': '0 auto', 'padding': '20px'}),
 ])
