@@ -75,7 +75,16 @@ html.H1('Looking For Trends', style={'textAlign': 'center'}),
         dbc.Stack([
             html.Div(dcc.Graph(id='americanscatterplot1', figure=fig1),),
             html.Div(dcc.Graph(id='americanscatterplot2', figure=fig2),),
-        ], gap=3)
+            html.P(
+                '10 States in America with the Highest Domestic Violence Rates',
+                style={'textAlign': 'center', 'font-family': 'Trebuchet MS, Arial, sans-serif', 'font-size': '16px'}),
+        ], gap=3),
+
+
+    html.P(
+        "A closer look at American domestic violence statistics shows a general trend of the higher a state’s population that did not attend college to a higher degree of domestic violence. On examination of the ten states with the most domestic violence rates, with the exception of one outlier, they all have at least 28% of the population with no college education while states with low domestic violence rates can be seen with this percentage being below 25%.",
+        style={'textAlign': 'center', 'color': 'black', 'font-size': '18px',
+               'max-width': '900px', 'margin': '0 auto', 'padding': '20px'}),
 ])
 
 

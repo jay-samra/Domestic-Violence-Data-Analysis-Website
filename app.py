@@ -17,7 +17,7 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.MINTY], suppress_call
 server = app.server
 
 # Layout definition (should work)
-from pages import choropleth1, scatterplot1, scatterplot2, choropleth2, scatterplot3, kmeansNational, linearRegressionAK, linearRegressionNY
+from pages import choropleth1, scatterplot1_3D, scatterplot2, choropleth2, scatterplot3, kmeansNational, linearRegressionAK, linearRegressionNY
 
 
 cardMap = dbc.Card([])
@@ -46,11 +46,11 @@ sidebar =  html.Div(
         dbc.Nav(
             [
                 dbc.Stack([
-                    dbc.NavLink("Introduction", href="/pages/choropleth1", active="exact"),
-                    dbc.NavLink("Status of Laws", href="/pages/choropleth1", active="exact"),
-                    dbc.NavLink("Possible Correlations", href="/pages/scatterplot1", active="exact"),
-                    dbc.NavLink("3D-Analysis", href="/pages/scatterplot2", active="exact"),
-                    dbc.NavLink("American Analysis", href="/pages/choropleth2", active="exact"),
+                    # dbc.NavLink("Introduction", href="/pages/choropleth1", active="exact"),
+                    dbc.NavLink("A Look Around the World", href="/pages/choropleth1", active="exact"),
+                    dbc.NavLink("Impact of Class Disparities", href="/pages/scatterplot1_3D", active="exact"),
+                    dbc.NavLink("A Zoom In on the Workforce", href="/pages/scatterplot2", active="exact"),
+                    dbc.NavLink("A Glance at America", href="/pages/choropleth2", active="exact"),
                     dbc.NavLink("Trends in American Data", href="/pages/scatterplot3", active="exact"),
                     dbc.NavLink("American Data Clustering & Segmentation", href="/pages/kmeansNational", active="exact"),
                     dbc.NavLink("Predictive Modeling (Arkansas)", href="/pages/linearRegressionAK", active="exact"),
@@ -90,8 +90,8 @@ app.layout = html.Div([
 def display_page(pathname):
     if pathname == '/pages/choropleth1':
         return choropleth1.layout
-    elif pathname == '/pages/scatterplot1':
-        return scatterplot1.layout
+    elif pathname == '/pages/scatterplot1_3D':
+        return scatterplot1_3D.layout
     elif pathname == '/pages/scatterplot2':
         return scatterplot2.layout
     elif pathname == '/pages/choropleth2':

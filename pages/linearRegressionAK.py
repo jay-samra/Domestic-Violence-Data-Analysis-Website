@@ -70,8 +70,17 @@ fig2.add_trace(go.Scatter(
     x=X,
     y=y,
     mode='markers',
-    name='First Training Data'
+    name='First Training Data',
 ))
+
+fig2.update_layout(
+    title="Arkansas Crime Rate Training Model",
+    template="ggplot2",
+    xaxis_title="Year",
+    yaxis_title="Violent Crime Rate",
+)
+
+title = "Arkansas Crime Rate Training Model",
 
 fig.add_trace(go.Scatter(
     x=X_train.flatten(),
@@ -89,7 +98,7 @@ fig.add_trace(go.Scatter(
 ))
 
 fig.update_layout(
-    title="Crime Rate Over Years",
+    title="Arkansas Crime Rate Linear Regression Model",
     xaxis_title="Year",
     yaxis_title="Violent Crime Rate",
     template="plotly_white"
@@ -101,9 +110,15 @@ layout = html.Div([
     html.H1('Looking For Trends', style={'textAlign': 'center'}),
     dbc.Stack([
         dcc.Graph(id='regression1', figure=fig2),
-        html.P('this is the first graph', style={'textAlign': 'center'}),
         dcc.Graph(id='regression', figure=fig),
 
     ], gap=3),
-    html.P('text', style={'textAlign': 'center'})
+    html.P(
+        'Linear Regression Model Predicting a Growing Crime Rate',
+        style={'textAlign': 'center', 'font-family': 'Trebuchet MS, Arial, sans-serif', 'font-size': '16px'}),
+
+    html.P(
+        "National domestic violence statistics show that the state of Arkansas has one of the worst offender rates in the country. This linear regression model which was implemented using Scikit Learn uses Arkansas’s history of domestic violence, beginning in 1960 to 2020. The regression line highlighted on the model predicts that Arkansas’s crime rate will continue to grow at a linear rate if it maintains the same variables that have caused this growth in crime. According to Arkansas State University Criminology Professor Angelo Brown Ph.D., Arkansas’ nation leading crime rate can be attributed to multiple factors shown in this case study including economic disparity and sub par education levels. Note: The data used in this training model was collected before the Covid-19 Pandemic",
+        style={'textAlign': 'center', 'color' : 'black', 'font-size': '18px',
+               'max-width': '900px', 'margin': '0 auto', 'padding': '20px'}),
 ])

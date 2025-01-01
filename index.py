@@ -12,7 +12,7 @@ from app import app
 from app import server
 
 # Connecting to app pages from pages folder
-from pages import choropleth1, scatterplot1, scatterplot2, choropleth2, scatterplot3
+from pages import choropleth1, scatterplot1_3D, scatterplot2, choropleth2, scatterplot3
 
 
 cardMap = dbc.Card([])

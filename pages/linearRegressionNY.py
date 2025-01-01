@@ -76,6 +76,13 @@ fig2.add_trace(go.Scatter(
     name='First Training Data'
 ))
 
+fig2.update_layout(
+    title="New York Crime Rate Training Model",
+    template="ggplot2",
+    xaxis_title="Year",
+    yaxis_title="Violent Crime Rate",
+)
+
 fig.add_trace(go.Scatter(
     x=X_train.flatten(),
     y=y_train,
@@ -92,7 +99,7 @@ fig.add_trace(go.Scatter(
 ))
 
 fig.update_layout(
-    title="Crime Rate Over Years",
+    title="New York Crime Rate Linear Regression Model",
     xaxis_title="Year",
     yaxis_title="Violent Crime Rate",
     template="plotly_white"
@@ -103,7 +110,18 @@ layout = html.Div([
     html.H1('Looking For Trends', style={'textAlign': 'center'}),
     dbc.Stack([
         dcc.Graph(id='regression1', figure=fig2),
+        html.P(
+        'Linear Regression Model Predicting a Falling Crime Rate',
+        style={'textAlign': 'center', 'font-size': '16px'}),
         dcc.Graph(id='regression', figure=fig),
 
-    ], gap=3)
+    ], gap=3),
+    html.P(
+        'Linear Regression Model Predicting a Falling Crime Rate',
+        style={'textAlign': 'center', 'font-size': '16px'}),
+
+    html.P(
+        "Linear regression testing conducted using Scikit-learn revealed that New York has experienced a significant decline in crime rates since its peak in 1990. Consequently, the state now reports one of the lowest domestic violence crime rates in the nation. According to economists and university professors Hope Corman and Naci Mocan, the decrease in unemployment rates and the rise in wage equality in New York are likely key factors contributing to this notable reduction in crime. Note: The data used in this training model was collected before the Covid-19 Pandemic",
+        style={'textAlign': 'center',  'color' : 'black', 'font-size': '18px',
+               'max-width': '900px', 'margin': '0 auto', 'padding': '20px'}),
 ])

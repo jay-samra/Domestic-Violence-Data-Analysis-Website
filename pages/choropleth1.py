@@ -45,5 +45,5 @@ layout = html.Div([
            " Today, 90% of the world population live in countries with legal policies to penalize domestic violence. "
            "This trend reflects significant progress in the global effort to combat violence, "
            "underscoring society's commitment to addressing this issue and we will continue to learn more about the factors that cause domestic violence.",
-           style={'textAlign': 'center', 'font-family':'Trebuchet MS, Arial, sans-serif', 'font-size': '18px', 'max-width': '900px', 'margin': '0 auto', 'padding': '20px'}),
+           style={'textAlign': 'center',  'color' : 'black', 'font-size': '18px', 'max-width': '900px', 'margin': '0 auto', 'padding': '20px'}),
 ])

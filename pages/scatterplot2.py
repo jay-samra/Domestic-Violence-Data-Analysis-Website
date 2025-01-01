@@ -49,4 +49,13 @@ fig = px.scatter_3d(ndf1, x='Ratio', y='incomeSpent', z='violenceNum', color='Co
 layout = html.Div([
     html.H1('Displaying the Correlation Between Healthcare Costs, # of Women in Workforce, and % of Women Who Have Experience Violence', style={'textAlign': 'center'}),
     dcc.Graph(id='scatterplot2', figure=fig),
+    html.P(
+        'Measuring the correlation between total percentage of women who have experienced violence and median salary per month',
+        style={'textAlign': 'center', 'color':'black', 'font-size': '16px'}),
+
+        html.P("This 3D scatter plot, created using Plotly, provides a visualization of the relationship between three variables: workplace diversity, average household spending on healthcare, and total violence experienced. Through this plot, it is clear to see that total healthcare costs have a higher degree of correlation to the total percentage of women who have experienced violence in their respective countries. However, the scatterplot also displays that the countries that have low diversity workforces, such as Afghanistan and Iraq, "
+               "report some of the higher violence rates in the world. Furthermore, this analysis solidifies the significance of economic factors, such as healthcare spending, in addressing and mitigating violence on a global scale, while highlighting the need to support economic justice worldwide.",
+           style={'textAlign': 'center', 'color':'black', 'font-size': '18px', 'max-width': '900px', 'margin': '0 auto', 'padding': '20px'}),
 ])
+
+
