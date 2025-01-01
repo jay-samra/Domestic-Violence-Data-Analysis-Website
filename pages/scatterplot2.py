@@ -47,7 +47,9 @@ ndf1['violenceNumCopy'] = ndf1['violenceNumCopy'].astype(int)
 fig = px.scatter_3d(ndf1, x='Ratio', y='incomeSpent', z='violenceNum', color='Country', size='violenceNumCopy',  opacity=0.7, log_y=True,log_x=True, log_z=True)
 
 layout = html.Div([
-    html.H1('Displaying the Correlation Between Healthcare Costs, # of Women in Workforce, and % of Women Who Have Experience Violence', style={'textAlign': 'center'}),
+    html.H1('Filler', style={'textAlign': 'center', 'font-size': '33px'}),
+    html.H1('A Zoom In on the Workforce',
+            style={'textAlign': 'center', 'color': 'black', 'font-size': '30px', 'textDecoration': 'underline'}),
     dcc.Graph(id='scatterplot2', figure=fig),
     html.P(
         'Measuring the correlation between total percentage of women who have experienced violence and median salary per month',

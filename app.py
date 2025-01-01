@@ -26,6 +26,8 @@ navBar = dbc.NavbarSimple(
     dbc.NavItem(dbc.DropdownMenu(className="dropdown", label="Important Links", children=[
         dbc.DropdownMenuItem("Donate Today!", href='https://ncadv.org/donate'),
         dbc.DropdownMenuItem("LinkedIn", href='https://www.linkedin.com/in/jagroop-s-sam18731/', external_link=True),
+        dbc.DropdownMenuItem("Github", href='https://github.com/jay-samra', external_link=True),
+
     ],)),
     brand = 'Domestic Violence: A Global & National Case Study',
     class_name = "navbar-brand",
@@ -51,7 +53,7 @@ sidebar =  html.Div(
                     dbc.NavLink("Impact of Class Disparities", href="/pages/scatterplot1_3D", active="exact"),
                     dbc.NavLink("A Zoom In on the Workforce", href="/pages/scatterplot2", active="exact"),
                     dbc.NavLink("A Glance at America", href="/pages/choropleth2", active="exact"),
-                    dbc.NavLink("Trends in American Data", href="/pages/scatterplot3", active="exact"),
+                    dbc.NavLink("Evaluating America's Violence Hotspots", href="/pages/scatterplot3", active="exact"),
                     dbc.NavLink("American Data Clustering & Segmentation", href="/pages/kmeansNational", active="exact"),
                     dbc.NavLink("Predictive Modeling (Arkansas)", href="/pages/linearRegressionAK", active="exact"),
                     dbc.NavLink("Predictive Modeling (New York)", href="/pages/linearRegressionNY", active="exact"),

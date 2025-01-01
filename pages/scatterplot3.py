@@ -71,7 +71,9 @@ fig2.update_layout(
 
 # page layout
 layout = html.Div([
-html.H1('Looking For Trends', style={'textAlign': 'center'}),
+    html.H1('Filler', style={'textAlign': 'center', 'font-size': '33px'}),
+    html.H1("Evaluating America's Violence Hotspots",
+            style={'textAlign': 'center', 'color': 'black', 'font-size': '30px', 'textDecoration': 'underline'}),
         dbc.Stack([
             html.Div(dcc.Graph(id='americanscatterplot1', figure=fig1),),
             html.Div(dcc.Graph(id='americanscatterplot2', figure=fig2),),

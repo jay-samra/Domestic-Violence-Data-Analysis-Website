@@ -107,11 +107,13 @@ fig.update_layout(
 
 # page layout
 layout = html.Div([
-    html.H1('Looking For Trends', style={'textAlign': 'center'}),
+    html.H1('Filler', style={'textAlign': 'center', 'font-size': '33px'}),
+    html.H1('Predictive Modeling (New York)',
+            style={'textAlign': 'center', 'color': 'black', 'font-size': '30px', 'textDecoration': 'underline'}),
     dbc.Stack([
         dcc.Graph(id='regression1', figure=fig2),
         html.P(
-        'Linear Regression Model Predicting a Falling Crime Rate',
+        'New York Crime Rate Training Model',
         style={'textAlign': 'center', 'font-size': '16px'}),
         dcc.Graph(id='regression', figure=fig),
 

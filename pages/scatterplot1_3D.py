@@ -51,9 +51,10 @@ fig.update_layout(template="plotly_white")
 fig.update_traces(marker=dict(symbol="circle", size=7, line=dict(width=0.5, color="black")))
 
 layout = html.Div([
-    html.H1('Correlation', style={'textAlign': 'center'}),
+    html.H1('Filler', style={'textAlign': 'center', 'font-size': '33px'}),
+    html.H1('Impact of Class Disparities',
+            style={'textAlign': 'center', 'color': 'black', 'font-size': '30px', 'textDecoration': 'underline'}),
     dcc.Graph(id='scatterplot1', figure=fig),
-    html.P('3d', style={'textAlign': 'center', 'font-family':'Helvetica', 'font-size': '16px'}),
     html.P("This scatterplot illustrates that nine out of the eleven countries represented, which lack penalties against domestic violence, have an average monthly income of less than two thousand dollars. "
            "This suggests a potential correlation between economic factors and the absence of legal protections. "
            "According to Action Aid, women living in low and lower-middle-income countries are 13% more likely to become victims of domestic violence. ",

@@ -54,6 +54,9 @@ fig = px.scatter(plot_data, x='Violence', y='Education', color='Cluster',
                  title='KMeans Clustering', labels={'Violence': '% of Women Who Have Experienced Violence', 'Education': '% of Population With No College Education'},
                  color_continuous_scale='viridis')
 
+fig.update_layout(
+    template="ggplot2",
+)
 # Add centroids to the Plotly plot
 for i, centroid in enumerate(kmeans.cluster_centers_):
     fig.add_trace(go.Scatter(x=[centroid[0]], y=[centroid[1]], mode='markers', marker=dict(color='red', size=12, symbol='x'),
@@ -61,16 +64,18 @@ for i, centroid in enumerate(kmeans.cluster_centers_):
 
 # page layout
 layout = html.Div([
-    html.H1('Looking For Trends', style={'textAlign': 'center'}),
+    html.H1('Filler', style={'textAlign': 'center', 'font-size': '33px'}),
+    html.H1('American Data Clustering & Segmentation',
+            style={'textAlign': 'center', 'color': 'black', 'font-size': '30px', 'textDecoration': 'underline'}),
     dbc.Stack([
         dcc.Graph(id='kmeans', figure=fig),
     ], gap=3),
     html.P(
         'Measuring the correlation between total percentage of women who have experienced violence and median salary per month',
-        style={'textAlign': 'center', 'font-family': 'Trebuchet MS, Arial, sans-serif', 'font-size': '16px'}),
+        style={'textAlign': 'center', 'color': 'black', 'font-size': '16px'}),
 
     html.P(
-        "A closer look at American domestic violence statistics shows a general trend of the higher a state’s population that did not attend college to a higher degree of domestic violence. On examination of the ten states with the most domestic violence rates, with the exception of one outlier, they all have at least 28% of the population with no college education while states with low domestic violence rates can be seen with this percentage being below 25%.",
-        style={'textAlign': 'center', 'font-family': 'Trebuchet MS, Arial, sans-serif', 'font-size': '18px',
+        "The unsupervised learning algorithm K-Means was applied with three centroids to segment the data into three distinct clusters. Cluster 1 encompasses states characterized by low domestic violence rates and high levels of college-educated individuals. Cluster 2 identifies states with a high proportion of residents lacking a college education, accompanied by elevated domestic violence rates. Cluster 0 represents states where educational attainment is comparable to Cluster 1, but domestic violence rates are moderately higher. Clustering and segmentation are essential techniques in data science, as they facilitate the identification of underlying patterns and relationships within complex datasets, enabling data-driven strategies for targeted solutions and informed decision-making.",
+        style={'textAlign': 'center', 'color': 'black', 'font-size': '18px',
                'max-width': '900px', 'margin': '0 auto', 'padding': '20px'}),
 ])

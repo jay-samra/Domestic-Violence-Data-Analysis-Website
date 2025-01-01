@@ -61,7 +61,9 @@ table = go.Figure(data=[
 
 # page layout
 layout = html.Div([
-    html.H1('American Examination', style={'textAlign': 'center'}),
+    html.H1('Filler', style={'textAlign': 'center', 'font-size': '33px'}),
+    html.H1('A Glance at America',
+            style={'textAlign': 'center', 'color': 'black', 'font-size': '30px', 'textDecoration': 'underline'}),
     dcc.Graph(id='americanMap', figure=fig),
     dcc.Graph(id='americanTable', figure=table),
     html.P('Measuring the correlation between total percentage of women who have experienced violence and median salary per month',
@@ -69,6 +71,6 @@ layout = html.Div([
 
     html.P("This choropleth map displays the percentages of women who have experienced domestic violence in each state with Kentucky, Nevada, and Alaska having the highest rates of domestic violence with 45.3%, 43.8%, and 43.3% respectively. On the other hand, states like New York, Rhode Island, and North Dakota have the lowest domestic violence rates in America with 31.7%, 32.6%, and 29.7% respectively. ",
             style={'textAlign': 'center', 'color':'black', 'font-size': '18px', 'max-width': '900px', 'margin': '0 auto', 'padding': '20px'}),
-
-    dbc.Button('Link to Next Page', href='/pages/scatterplot1'),
+    # NEED TO ADD BUTTONS TO EACH PAGE
+    # dbc.Button('Link to Next Page', href='/pages/scatterplot1'),
 ])

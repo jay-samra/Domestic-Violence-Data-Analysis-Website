@@ -36,7 +36,8 @@ mapFig.update_layout(paper_bgcolor="#e0e0e0")
 
 # page layout
 layout = html.Div([
-    html.H1('A Look Across the Globe', style={'textAlign': 'center', 'font-family':'Trebuchet MS, Arial, sans-serif', 'font-size': '8px'}),
+    html.H1('Filler', style={'textAlign': 'center', 'font-size': '33px'}),
+    html.H1('A Look Around the World', style={'textAlign': 'center', 'color':'black', 'font-size': '30px', 'textDecoration': 'underline'}),
     dcc.Graph(id='globalMap', figure=mapFig),
     html.P('This interactive map displays the existence of laws protecting against domestic violence in every country across the world.', style={'textAlign': 'center', 'font-family':'Trebuchet MS, Arial, sans-serif', 'font-size': '16px'}),
     html.P("This interactive choropleth map highlights the current status of countries worldwide in providing legal protections against domestic violence, "
